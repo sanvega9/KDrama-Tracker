@@ -30,6 +30,7 @@ table {
   width: 100%;
   border-collapse: collapse;
   margin-top: 20px;
+  border: 1px solid black;
   background-color: white;
 }
 #watchLaterTable {
@@ -44,10 +45,90 @@ table {
   padding: 0.75rem;
   border: 1px solid #ff99bb;
   text-align: center;
+  color:cadetblue
 }
 #watchLaterTable th {
   background-color: #ffd1dc;
   color: #333;
+}
+/* RSVP Section Styling */
+#rsvp {
+  padding: 50px 20px;
+  background-color: #093d6a;
+  font-family: Arial, sans-serif;
+  border-radius: 15px;
+
+}
+
+#rsvp h2 {
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: 30px;
+  color: #ffffff;
+}
+
+/* Container that holds paragraph and participant list */
+.rsvp-container {
+  max-width: 700px;
+  margin: 0 auto 40px auto;
+  padding: 20px;
+  background-color: #410a0a;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.rsvp-para {
+  margin-bottom: 20px;
+  font-size: 18px;
+  color: #ffffff;
+}
+
+.rsvp-participants p {
+  margin: 8px 0;
+  font-size: 16px;
+  color: #ffffff;
+}
+
+/* Form Styling */
+.form-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 25px;
+  background-color: #4a0707;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+#rsvp-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+#rsvp-form input,
+#rsvp-form select,
+#rsvp-form textarea {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  width: 100%;
+}
+
+#rsvp-button {
+  margin-top: 20px;
+  padding: 12px;
+  font-size: 18px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#rsvp-button:hover {
+  background-color: #2980b9;
 }
 
 /* === Typography === */
@@ -273,7 +354,82 @@ nav ul li a:hover {
   margin: 0 auto;
   font-size: 1.1em;
 }
+.modal {
+  display: none; /* Start hidden */
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(29, 64, 218, 0.4);
 
+  /* Flexbox layout when active — will be added via JS */
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.dark-mode .modal{
+  display: none; /* Start hidden */
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(72, 255, 188, 0.4);
+
+  /* Flexbox layout when active — will be added via JS */
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.dark-mode .modal.show{
+  display: flex;
+}
+.dark-mode .modal-container{
+  background-color: rgb(255, 86, 123);
+  padding: 30px;
+  border-radius: 8px;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+  color: rgb(255, 255, 255);
+  font-family: monospace;
+  font-size: 1rem;
+  max-width: 600px;
+  width: 90%;  
+}
+.modal.show {
+  display: flex; /* Only show when this class is added */
+}
+.modal-container {
+  background-color: lightsteelblue;
+  padding: 30px;
+  border-radius: 8px;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+  color: black;
+  font-family: monospace;
+  font-size: 1rem;
+  max-width: 600px;
+  width: 90%;
+}
+.modal-item img {
+  width: 250px;
+  height: 203px;
+  border-radius: 10%;
+  user-select: none;
+}
+#close-modal-btn {
+  margin-top: 10px;
+  cursor: pointer;
+  padding: 6px 12px;
+  font-family: monospace;
+}
 /* === Video Embeds === */
 .video-container {
    position: relative;
@@ -294,7 +450,7 @@ nav ul li a:hover {
   height: 100%;
   border: none;
   border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 12px rgba(146, 60, 60, 0.2);
 }
 
 /* === Responsive Layout for Small Screens (Mobile) === */
